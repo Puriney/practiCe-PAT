@@ -15,10 +15,11 @@ void ElementaryArithmetic(void){
 	fprintf(stderr, "开始解决问题：整数四则运算\n");
 	fprintf(stderr, "题源：http://pat.zju.edu.cn/contests/mooc-c/02-0\n"); 
 
-	int a;
-	int b;
-	scanf("输入第一个数字：%d", &a);
-	scanf("输入第二个数字：%d", &b);
+	int a = 0;
+	int b = 0;
+	
+	scanf("%d %d", &a, &b);
+	printf("已输入的两个数字分别是： %d 和 %d ", a, b); 
 	
 	int c_sum       = a + b;
 	int c_substract = a - b;
