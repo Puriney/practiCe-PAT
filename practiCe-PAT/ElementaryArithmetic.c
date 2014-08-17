@@ -13,9 +13,12 @@
 
 void ElementaryArithmetic(void){
 	fprintf(stderr, "开始解决问题：整数四则运算\n");
-	
-	int a = 0;
-	int b = 0;
+	fprintf(stderr, "题源：http://pat.zju.edu.cn/contests/mooc-c/02-0\n"); 
+
+	int a;
+	int b;
+	scanf("%d", &a);
+	scanf("%d", &b);
 	
 	int c_sum       = a + b;
 	int c_substract = a - b;
