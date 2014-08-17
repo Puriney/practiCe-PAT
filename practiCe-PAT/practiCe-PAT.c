@@ -11,6 +11,7 @@
 #include <unistd.h>
 #include <string.h>
 #include "ElementaryArithmetic.h"
+#include "LengthConverter.h"
 
 static int usage()
 {
@@ -26,10 +27,9 @@ int main(int argc, char const *argv[])
 
 	if (argc == 1) return usage();
 
-	if (strcmp(argv[1], "02-0") == 0) {
-//        fprintf(stderr, "%s 问题\n", argv[1]);
-        ElementaryArithmetic();
-    }
+	if (strcmp(argv[1], "02-0") == 0) ElementaryArithmetic();
+	else if (strcmp(argv[1], "02-1") == 0) LengthConverter();
+	
 	else {
 		fprintf(stderr, "找不到['%s']题，请确认是否存在于题库中或者等待我更新\n", argv[1]);
 		return 1;
