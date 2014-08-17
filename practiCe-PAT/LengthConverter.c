@@ -11,11 +11,12 @@
 #include "LengthConverter.h"
 
 void LengthConverter(void){
-	printf("输入格式：" \
-		   "输入在一行中给出1个正整数，单位是厘米。\n");
+	printf("// 输入格式：" \
+		   "// 输入在一行中给出1个正整数，单位是厘米。\n");
 
-	//	公式1： (foot + inch / 12) * 0.3048 = cm
+	//	公式1： foot = m / 0.3048
 	//	公式2： foot = inch / 12
+	//	公式3： m = cm / 100
 	
 	//	输入样例：
 	//	170
@@ -24,19 +25,25 @@ void LengthConverter(void){
 	int l_cm = 0;
 	int o_foot = 0;
 	int o_inch = 0;
-	
+
 	float const EQUATION = 0.3048;
 	float const FOOTINCH = 12;
-	scanf("输入长度(单位厘米): %d", &l_cm);
+	float const CM2M = 100.0;
+	printf("// 输入长度(单位厘米):\n");
+	scanf("%d", &l_cm);
 	
 	//	第一步
 	//	根据公式1和2 从cm转换为foot
-	float cm2foot = l_cm / EQUATION / 2;
+	float l_m = l_cm / CM2M;
+	float m2foot = l_m / EQUATION;
+	fprintf(stderr, ">> %d cm = %.5f feet\n", l_cm, m2foot);
 	
-	o_foot = (int)cm2foot;
-	o_inch = (int)((cm2foot - o_foot) * FOOTINCH);
+	//	第二步
+	//	强制转换浮点型到整数型取整数foot
+	//	小数点转换为inch
+	o_foot = (int)m2foot;
+	o_inch = (int)((m2foot - o_foot) * FOOTINCH);
 	
-	printf("%d %d", o_foot, o_inch);
-	
+	printf("%d %d\n", o_foot, o_inch);
 	
 }
