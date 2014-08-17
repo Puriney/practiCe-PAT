@@ -17,8 +17,8 @@ void ElementaryArithmetic(void){
 
 	int a;
 	int b;
-	scanf("%d", &a);
-	scanf("%d", &b);
+	scanf("输入第一个数字：%d", &a);
+	scanf("输入第二个数字：%d", &b);
 	
 	int c_sum       = a + b;
 	int c_substract = a - b;
