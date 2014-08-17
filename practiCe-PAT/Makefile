@@ -3,9 +3,11 @@ CFLAGS=-g
 
 OBJS=\
 	practiCe-PAT.o	\
-	ElementaryArithmetic.o
+	ElementaryArithmetic.o	\
+	LengthConverter.o
 HOBJS=\
-	ElementaryArithmetic.h
+	ElementaryArithmetic.h	\
+	LengthConverter.o
 
 all:$(OBJS)
 	gcc	$(OBJS)	-o	practiCe-PAT
