@@ -15,6 +15,9 @@ practiCe-PAT.o:practiCe-PAT.c	$(HOBJS)
 
 ElementaryArithmetic.o:ElementaryArithmetic.c	ElementaryArithmetic.h
 	gcc	-c	ElementaryArithmetic.c
+
+LengthConverter.o:LengthConverter.c	LengthConverter.h
+	gcc -c LengthConverter.c
     
 clean:
 	rm -rf *.o
