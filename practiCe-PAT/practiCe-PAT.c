@@ -19,6 +19,7 @@ static int usage()
 	fprintf(stderr, "Usage: practiCe <题目编号> <参数>\n");
 	fprintf(stderr, "题目编号:\n");
 	fprintf(stderr, "02-0\t整数的四则运算\n");
+	fprintf(stderr, "02-1\t厘米转换为英尺与英寸\n");
 	return 1; // Running come across with certain problems.
 }
 
