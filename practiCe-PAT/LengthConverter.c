@@ -11,7 +11,8 @@
 #include "LengthConverter.h"
 
 void LengthConverter(void){
-	printf("// 输入格式：\n" \
+	printf("// 开始解答：长度转换\n" \
+		   "// 输入格式：\n" \
 		   "// 输入在一行中给出1个正整数，单位是厘米。\n");
 
 	//	公式1： foot = m / 0.3048
