@@ -11,21 +11,20 @@
 #include "ReverseNumber.h"
 
 
-// Though pow(a, b) function in math.h works
-int power(int a, int b){
-	int c = 1;
-	if (b > 0){
-		while (b != 0) {
-			c = 10 * c;
-			b --;
+/* Though pow(a, b) function in math.h works */
+int power10(int x){
+	int a = 1;
+	if (x > 0){
+		while (x != 0) {
+			a = 10 * a;
+			x --;
 		}
-		c = a * c;
 	}
-	else if (b < 0){
-		c = 0;
+	else if (x < 0){
+		a = 0;
 	}
 	else {};
-	return c;
+	return a;
 }
 
 void ReverseNumber(void){
@@ -38,17 +37,19 @@ void ReverseNumber(void){
 	else if (x < 0) digits = floor(log10(-x)) + 1;
 	else digits = 0;
 	
+//	fprintf(stderr, "digits=%d", digits);
 	int const kDIVIDER = 10;
 	
 	int o = 0;
 	int i = digits;
 	int n = 0;
-	
-//	Reverse function
+
+/*	Reverse function */
 	while (i != 0) {
 		n  = x % kDIVIDER;
 		x = x / kDIVIDER;
-		o = o + n * power(kDIVIDER, (i - 1));
+		o = o + n * power10(i - 1);
+//		fprintf(stderr, "Last Digit=%d, Truncated Value=%d, Output=%d, step=%d\n", n, x, o, i);
 		i --;
 	}
 	printf("%d\n", o); 
