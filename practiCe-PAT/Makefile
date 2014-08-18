@@ -4,10 +4,13 @@ CFLAGS=-g
 OBJS=\
 	practiCe-PAT.o	\
 	ElementaryArithmetic.o	\
-	LengthConverter.o
+	LengthConverter.o	\
+	TimeCounter.o
+
 HOBJS=\
 	ElementaryArithmetic.h	\
-	LengthConverter.o
+	LengthConverter.h	\
+	TimeCounter.h
 
 all:$(OBJS)
 	gcc	$(OBJS)	-o	practiCe-PAT
@@ -20,6 +23,9 @@ ElementaryArithmetic.o:ElementaryArithmetic.c	ElementaryArithmetic.h
 
 LengthConverter.o:LengthConverter.c	LengthConverter.h
 	gcc -c LengthConverter.c
+	
+TimeCounter.o:TimeCounter.c	TimeCounter.h
+	gcc -c TimeCounter.c
     
 clean:
 	rm -rf *.o
