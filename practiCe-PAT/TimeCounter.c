@@ -20,6 +20,11 @@ void TimeCounter(void){
 //	输出格式：
 //	
 //	输出四位数字表示的终止时间。题目保证起始时间和终止时间在同一天内。
+	
+	fprintf(stderr, "开始解答：现在几点了\n");
+	
+	printf("请输入起始时间（如1130表示11点30分）与流失时间 (如120分)\n");
+	
 	int const kTIMESCALE = 60;
 	int t0;
 	int delta_t_min;
