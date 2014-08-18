@@ -14,6 +14,8 @@
 #include "LengthConverter.h"
 #include "TimeCounter.h"
 #include "ReverseNumber.h"
+#include "DescriptBCD.h"
+
 static int usage()
 {
 	fprintf(stderr, "\n");
@@ -36,6 +38,7 @@ int main(int argc, char const *argv[])
 	else if (strcmp(argv[1], "02-1") == 0) LengthConverter();
 	else if (strcmp(argv[1], "02-2") == 0) TimeCounter();
 	else if (strcmp(argv[1], "02-3") == 0) ReverseNumber();
+	else if (strcmp(argv[1], "02-4") == 0) DescriptBCD();
 	else {
 		fprintf(stderr, "找不到['%s']题，请确认是否存在于题库中或者等待我更新\n", argv[1]);
 		return 1;

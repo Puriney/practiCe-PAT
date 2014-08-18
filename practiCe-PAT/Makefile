@@ -6,13 +6,15 @@ OBJS=\
 	ElementaryArithmetic.o	\
 	LengthConverter.o	\
 	TimeCounter.o	\
-	ReverseNumber.o
+	ReverseNumber.o	\
+	DescriptBCD.o
 
 HOBJS=\
 	ElementaryArithmetic.h	\
 	LengthConverter.h	\
 	TimeCounter.h	\
-	ReverseNumber.o
+	ReverseNumber.h	\
+	DescriptBCD.h
 
 all:$(OBJS)
 	gcc	$(OBJS)	-o	practiCe-PAT
@@ -31,7 +33,10 @@ TimeCounter.o:TimeCounter.c	TimeCounter.h
 
 ReverseNumber.o:ReverseNumber.c ReverseNumber.h
 	gcc -c ReverseNumber.c
-    
+
+DescriptBCD.o:DescriptBCD.c	DescriptBCD.h
+	gcc -c DescriptBCD.c
+	
 clean:
 	rm -rf *.o
 	rm practiCe-PAT
