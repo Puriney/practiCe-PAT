@@ -20,19 +20,22 @@ void TimeCounter(void){
 //	输出格式：
 //	
 //	输出四位数字表示的终止时间。题目保证起始时间和终止时间在同一天内。
-
-	int t0 = 0;
-	int delta_t = 0;
-	scanf("%d, %d", t0, delta_t);
+	int const kTIMESCALE = 60;
+	int t0;
+	int delta_t_min;
+	scanf("%d %d", &t0, &delta_t_min);
+	printf("// User inputs are %d, and %d\n", t0, delta_t_min);
+	int t0_hr  = (int)(t0 / 100);
+	int t0_min = t0 % 100;
 	
-	t0_hr  = t0 / 100;
-	t0_min = t0 % 100;
-	t0 = t0_hr * 60 + t0_min;
+	t0 = t0_hr * kTIMESCALE + t0_min;
+	printf("t0_hr=%d, t0_min=%d, t0=%d\n", t0_hr, t0_min, t0);
+	int t1 = t0 + delta_t_min;
+	int t1_hr = (int)(t1 / kTIMESCALE);
+	int t1_min = t1 % kTIMESCALE;
 	
-	int t1 = t0 + delta_t;
-	int t1_hr = t1 / 100;
-	int t1_min = t1 % 100;
-	
-	printf("%d, %d", t1_hr, t1_min);
+	printf("// hour=%d, min=%d\n", t1_hr, t1_min);
+	t1 = t1_hr * 100 + t1_min;
+	printf("%d\n", t1);
 	
 }
