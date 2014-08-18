@@ -7,9 +7,11 @@
 //
 
 #include <stdio.h>
+#include <string.h>
 #include "TimeCounter.h"
 
 void TimeCounter(void){
+	
 //	输入格式：
 //	
 //	输入在一行中给出2个整数，分别是四位数字表示的起始时间、以及流逝的分钟数，其间以空格分隔。
@@ -21,11 +23,16 @@ void TimeCounter(void){
 
 	int t0 = 0;
 	int delta_t = 0;
+	scanf("%d, %d", t0, delta_t);
 	
-	scanf("%d, %d", t0, delta_t); 
 	t0_hr  = t0 / 100;
 	t0_min = t0 % 100;
 	t0 = t0_hr * 60 + t0_min;
 	
+	int t1 = t0 + delta_t;
+	int t1_hr = t1 / 100;
+	int t1_min = t1 % 100;
+	
+	printf("%d, %d", t1_hr, t1_min);
 	
 }
