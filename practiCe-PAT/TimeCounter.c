@@ -22,7 +22,7 @@ void TimeCounter(void){
 	int t0 = 0;
 	int delta_t = 0;
 	
-	scanf(
+	scanf("%d, %d", t0, delta_t); 
 	t0_hr  = t0 / 100;
 	t0_min = t0 % 100;
 	t0 = t0_hr * 60 + t0_min;
