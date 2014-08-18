@@ -30,6 +30,9 @@ int power10(int x){
 void ReverseNumber(void){
 	int x = 0;
 	
+	fprintf(stderr, "开始解答：逆序数字\n");
+	
+	printf("请输入一个待逆序的整数\n");
 	scanf("%d", &x);
 	
 	int digits;
