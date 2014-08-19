@@ -29,8 +29,8 @@ int PAT03x(char *puzzle){
 */
 void Overspeeding(void){
 	
-	printf("开始解题: 超速判断\n");
-	printf("请输入一个不超过500的非负整数\n");
+	fprintf(stderr, "开始解题: 超速判断\n");
+	fprintf(stderr, "请输入一个不超过500的非负整数\n");
 	int speed = 0;
 	scanf("%d", &speed);
 	char *tag = "UNKNOWN";
@@ -54,7 +54,37 @@ void Overspeeding(void){
 	03-1 FishingorDrying
 */
 void FishingorDrying(void){
+	fprintf(stderr, "开始解题: 这一天你在打渔还是筛网?\n");
+	fprintf(stderr, "请输入你今天是第几天\n");
+	int n = -1;
+	while (n < 0 ) {
+		scanf("%d", &n);
+		if (n < 0) fprintf(stderr, "宝贝别闹!!! 快输入一个天数\n");
+	}
 	
+	int const kCYCLE = 5;
+	int day = n % kCYCLE; /* day in cycle */
+	char *tag = "UNKNOWN";
+	switch (day) {
+		case 1:
+			tag = "Fishing";
+			break;
+		case 2:
+			tag = "Fishiing";
+			break;
+		case 3:
+			tag = "Fishing";
+			break;
+		case 4:
+			tag = "Drying";
+			break;
+		case 5:
+			tag = "Drying";
+			break;
+		default:
+			break;
+	}
+	printf("%s in Day %d\n", tag, n);
 }
 
 /*

@@ -42,6 +42,7 @@ int main(int argc, char *argv[])
 	else if (strcmp(argv[1], "02-3") == 0) ReverseNumber();
 	else if (strcmp(argv[1], "02-4") == 0) DescriptBCD();
 	else if (strcmp(argv[1], "03-0") == 0) PAT03x(pNUMBERPUZZLE);
+	else if (strcmp(argv[1], "03-1") == 0) PAT03x(pNUMBERPUZZLE); 
 	else {
 		fprintf(stderr, "找不到['%s']题，请确认是否存在于题库中或者等待我更新\n", argv[1]);
 		return 1;
