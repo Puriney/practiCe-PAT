@@ -15,6 +15,7 @@
 #include "TimeCounter.h"
 #include "ReverseNumber.h"
 #include "DescriptBCD.h"
+#include "PAT03x.h"
 
 static int usage()
 {
@@ -26,19 +27,21 @@ static int usage()
 	fprintf(stderr, "02-2\t然后是几点钟\n");
 	fprintf(stderr, "02-3\t逆序的三位数\n");
 	fprintf(stderr, "02-4\tBCD解密\n");
+	fprintf(stderr, "03-0\t超速判断\n");
 	return 1; // Running come across with certain problems.
 }
 
-int main(int argc, char const *argv[])
+int main(int argc, char *argv[])
 {
 
 	if (argc == 1) return usage();
-
+	char *pNUMBERPUZZLE = argv[1];
 	if (strcmp(argv[1], "02-0") == 0) ElementaryArithmetic();
 	else if (strcmp(argv[1], "02-1") == 0) LengthConverter();
 	else if (strcmp(argv[1], "02-2") == 0) TimeCounter();
 	else if (strcmp(argv[1], "02-3") == 0) ReverseNumber();
 	else if (strcmp(argv[1], "02-4") == 0) DescriptBCD();
+	else if (strcmp(argv[1], "03-0") == 0) PAT03x(pNUMBERPUZZLE);
 	else {
 		fprintf(stderr, "找不到['%s']题，请确认是否存在于题库中或者等待我更新\n", argv[1]);
 		return 1;
