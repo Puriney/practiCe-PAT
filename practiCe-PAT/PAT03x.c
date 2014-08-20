@@ -151,7 +151,7 @@ void TimeFormator(void){
 		hr_12 = hr_24 - 12;
 		tag = "PM";
 	} else {}
-	fprintf(stderr, "12小时制时间为:\n"); 
+	fprintf(stderr, "12小时制时间为:\n");
 	printf("%d:%d %s\n", hr_12, min_12, tag);
 }
 
@@ -159,6 +159,19 @@ void TimeFormator(void){
 	03-4 GPA
 */
 void GPA(void){
-	
+	fprintf(stderr, "开始解题: 学分转换\n");
+	fprintf(stderr, "请输入一个[0, 100]以内的分数\n");
+	int score = 0;
+	char *grade = "N";
+	scanf("%d", &score);
+	grade =
+		score > 100 ? "ERROR":
+		score >= 90 ? "A" :
+		score >= 80 ? "B" :
+		score >= 70 ? "C" :
+		score >= 60 ? "D" :
+		score >=  0 ? "E" :
+		"ERROR";
+	printf("%s\n", grade);
 }
 
