@@ -22,12 +22,19 @@ static int usage()
 	fprintf(stderr, "\n");
 	fprintf(stderr, "Usage: practiCe <题目编号> <参数>\n");
 	fprintf(stderr, "题目编号:\n");
+	
 	fprintf(stderr, "02-0\t整数的四则运算\n");
 	fprintf(stderr, "02-1\t厘米转换为英尺与英寸\n");
 	fprintf(stderr, "02-2\t然后是几点钟\n");
 	fprintf(stderr, "02-3\t逆序的三位数\n");
 	fprintf(stderr, "02-4\tBCD解密\n");
+	
 	fprintf(stderr, "03-0\t超速判断\n");
+	fprintf(stderr, "03-1\t打渔还是晒网\n");
+	fprintf(stderr, "03-2\t天平找小球\n");
+	fprintf(stderr, "03-3\t12-24小时进制转换\n");
+	fprintf(stderr, "03-4\t成绩转换\n");
+	
 	return 1; // Running come across with certain problems.
 }
 
@@ -43,6 +50,9 @@ int main(int argc, char *argv[])
 	else if (strcmp(argv[1], "02-4") == 0) DescriptBCD();
 	else if (strcmp(argv[1], "03-0") == 0) PAT03x(pNUMBERPUZZLE);
 	else if (strcmp(argv[1], "03-1") == 0) PAT03x(pNUMBERPUZZLE); 
+	else if (strcmp(argv[1], "03-2") == 0) PAT03x(pNUMBERPUZZLE);
+	else if (strcmp(argv[1], "03-3") == 0) PAT03x(pNUMBERPUZZLE);
+	else if (strcmp(argv[1], "03-4") == 0) PAT03x(pNUMBERPUZZLE);
 	else {
 		fprintf(stderr, "找不到['%s']题，请确认是否存在于题库中或者等待我更新\n", argv[1]);
 		return 1;

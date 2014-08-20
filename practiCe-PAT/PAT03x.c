@@ -15,6 +15,9 @@ int PAT03x(char *puzzle){
 	
 	if (strcmp(puzzle, "03-0") == 0) Overspeeding();
 	else if (strcmp(puzzle, "03-1") == 0) FishingorDrying(); 
+	else if (strcmp(puzzle, "03-2") == 0) Scale();
+	else if (strcmp(puzzle, "03-3") == 0) TimeFormator();
+	else if (strcmp(puzzle, "03-4") == 0) GPA();
 	else {
 		run = 1;
 	}
@@ -78,19 +81,51 @@ void FishingorDrying(void){
 		case 4:
 			tag = "Drying";
 			break;
-		case 5:
+		case 0:
 			tag = "Drying";
 			break;
 		default:
 			break;
 	}
-	printf("%s in Day %d\n", tag, n);
+	
+	/* Alternatives:
+	day = (n -1) % kCYCLE;
+	if (day <3) tag = "Fishing"; 
+	else  tag = "Drying";
+	*/
+	printf("%s in day %d\n", tag, n);
 }
 
 /*
 	03-2 Scale
 */
 void Scale(void){
+	fprintf(stderr, "开始解题: 找小球\n");
+	fprintf(stderr, "请输入3个数字, 两个相同, 一个不同\n");
+	int a;
+	int b;
+	int c;
+	scanf("%d %d %d", &a, &b, &c);
+	/* Should have pre-test to check here!
+	 whether two are same and only one is different
+	*/
+	
+	/* 
+		Non-flexible version
+	*/
+	char *o = "UNKNOWN";
+	if (a == b){
+		o = "C";
+	}
+	else {
+		if (a == c) {
+			o = "B";
+		}
+		else {
+			o = "A";
+		}
+	}
+	printf("%s\n", o);
 	
 }
 
@@ -98,7 +133,26 @@ void Scale(void){
 	03-3 TimeFormator
 */
 void TimeFormator(void){
-	
+	fprintf(stderr, "开始解题: 12/24小时转换\n");
+	fprintf(stderr, "请输入一个24小时制的时间\n");
+	int hr_24 = 0;
+	char *tag = "AM";
+	int min_24 = 0;
+	scanf("%d:%d", &hr_24, &min_24);
+	int min_12 = min_24;
+	int hr_12 = 0;
+	if (hr_24 < 12) {
+		hr_12 = hr_24;
+		tag = "AM";
+	} else if (hr_24 == 12){
+		hr_12 = hr_24;
+		tag = "PM";
+	} else if (hr_24 > 12){
+		hr_12 = hr_24 - 12;
+		tag = "PM";
+	} else {}
+	fprintf(stderr, "12小时制时间为:\n"); 
+	printf("%d:%d %s\n", hr_12, min_12, tag);
 }
 
 /*
