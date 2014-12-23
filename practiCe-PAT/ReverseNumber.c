@@ -9,23 +9,7 @@
 #include <stdio.h>
 #include <math.h>
 #include "ReverseNumber.h"
-
-
-/* Though pow(a, b) function in math.h works */
-int power10(int x){
-	int a = 1;
-	if (x > 0){
-		while (x != 0) {
-			a = 10 * a;
-			x --;
-		}
-	}
-	else if (x < 0){
-		a = 0;
-	}
-	else {};
-	return a;
-}
+#include "misc.h"
 
 void ReverseNumber(void){
 	int x = 0;

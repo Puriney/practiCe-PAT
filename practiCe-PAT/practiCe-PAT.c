@@ -16,6 +16,7 @@
 #include "ReverseNumber.h"
 #include "DescriptBCD.h"
 #include "PAT03x.h"
+#include "mooc3.h"
 
 static int usage()
 {
