@@ -35,6 +35,9 @@ static int usage()
 	fprintf(stderr, "03-3\t12-24小时进制转换\n");
 	fprintf(stderr, "03-4\t成绩转换\n");
 	
+	fprintf(stderr, "mooc3-1\t奇偶个数\n");
+	fprintf(stderr, "mooc3-2\t数字特征值\n"); 
+	
 	return 1; // Running come across with certain problems.
 }
 
@@ -53,6 +56,9 @@ int main(int argc, char *argv[])
 	else if (strcmp(argv[1], "03-2") == 0) PAT03x(pNUMBERPUZZLE);
 	else if (strcmp(argv[1], "03-3") == 0) PAT03x(pNUMBERPUZZLE);
 	else if (strcmp(argv[1], "03-4") == 0) PAT03x(pNUMBERPUZZLE);
+	
+	else if (strcmp(argv[1], "mooc3-1") == 0) mooc3(pNUMBERPUZZLE);
+	else if (strcmp(argv[1], "mooc3-2") == 0) mooc3(pNUMBERPUZZLE); 
 	else {
 		fprintf(stderr, "找不到['%s']题，请确认是否存在于题库中或者等待我更新\n", argv[1]);
 		return 1;
