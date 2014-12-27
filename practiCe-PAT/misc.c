@@ -56,25 +56,23 @@ bool isOdd(int x){
 bool isPrime(int x){
 	bool out = true;
 	if (x >= 1 && x <= 3){
-		return out;
+		out = true;
 	} else if (x == 4){
 		out = false;
-		return out;
 	} else {
-		if (x % 2 == 0){
-			out = false;
-			return out;
-		}
-
 		int max_i = (int)(sqrt(x)) + 1;
 		for (int i = 3; i <= max_i; i++) {
+			if (x % 2 == 0){
+				out = false;
+				break;
+			}
 			if (isOdd(i)) {
 				if (x % i == 0) {
 					out = false;
-					return out;
+					break;
 				}
 			}
 		}
-		
 	}
+	return out;
 }

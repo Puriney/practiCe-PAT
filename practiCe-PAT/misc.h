@@ -8,3 +8,6 @@
 
 int power2(int x);
 int power10(int x);
+bool isOdd(int x);
+bool isPrime(int x); 
+
