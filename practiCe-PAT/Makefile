@@ -10,7 +10,7 @@ OBJS=\
 	ReverseNumber.o	\
 	DescriptBCD.o	\
 	PAT03x.o	\
-	mooc3.o
+	mooc.o
 
 HOBJS=\
 	ElementaryArithmetic.h	\
@@ -20,7 +20,7 @@ HOBJS=\
 	ReverseNumber.h	\
 	DescriptBCD.h	\
 	PAT03x.h	\
-	mooc3.o
+	mooc.o
 
 all:$(OBJS)
 	gcc	$(OBJS)	-o	practiCe-PAT
@@ -49,8 +49,8 @@ DescriptBCD.o:DescriptBCD.c	DescriptBCD.h
 PAT03x.o:PAT03x.c	PAT03x.h
 	gcc -c PAT03x.c
 
-mooc3.o:mooc3.c	mooc3.h
-	gcc	-c	mooc3.c
+mooc.o:mooc.c	mooc.h
+	gcc	-c	mooc.c
 	
 clean:
 	rm -rf *.o

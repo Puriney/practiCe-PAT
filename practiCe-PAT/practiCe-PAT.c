@@ -16,7 +16,7 @@
 #include "ReverseNumber.h"
 #include "DescriptBCD.h"
 #include "PAT03x.h"
-#include "mooc3.h"
+#include "mooc.h"
 
 static int usage()
 {
@@ -37,7 +37,9 @@ static int usage()
 	fprintf(stderr, "03-4\t成绩转换\n");
 	
 	fprintf(stderr, "mooc3-1\t奇偶个数\n");
-	fprintf(stderr, "mooc3-2\t数字特征值\n"); 
+	fprintf(stderr, "mooc3-2\t数字特征值\n");
+ 
+	fprintf(stderr, "mooc4-1\t求和第n个到第m个素数之和\n");
 	
 	return 1; // Running come across with certain problems.
 }
@@ -58,8 +60,10 @@ int main(int argc, char *argv[])
 	else if (strcmp(argv[1], "03-3") == 0) PAT03x(pNUMBERPUZZLE);
 	else if (strcmp(argv[1], "03-4") == 0) PAT03x(pNUMBERPUZZLE);
 	
-	else if (strcmp(argv[1], "mooc3-1") == 0) mooc3(pNUMBERPUZZLE);
-	else if (strcmp(argv[1], "mooc3-2") == 0) mooc3(pNUMBERPUZZLE); 
+	else if (strcmp(argv[1], "mooc3-1") == 0) mooc(pNUMBERPUZZLE);
+	else if (strcmp(argv[1], "mooc3-2") == 0) mooc(pNUMBERPUZZLE);
+	else if (strcmp(argv[1], "mooc4-1") == 0) mooc(pNUMBERPUZZLE);
+	else if (strcmp(argv[1], "mooc4-2") == 0) mooc(pNUMBERPUZZLE);
 	else {
 		fprintf(stderr, "找不到['%s']题，请确认是否存在于题库中或者等待我更新\n", argv[1]);
 		return 1;
