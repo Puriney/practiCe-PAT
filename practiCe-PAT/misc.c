@@ -7,6 +7,8 @@
 //
 #include <stdio.h>
 #include <string.h>
+#include <stdbool.h>
+#include <math.h>
 #include "misc.h"
 
 int power10(int x){
@@ -37,4 +39,42 @@ int power2(int x){
 	}
 	else {};
 	return a;
+}
+
+bool isOdd(int x){
+	bool out = false;
+	if (x < 0){
+		x = -1 * x;
+	}
+	
+	if (x % 2 != 0) {
+		out = true;
+	}
+
+	return out;
+}
+bool isPrime(int x){
+	bool out = true;
+	if (x >= 1 && x <= 3){
+		return out;
+	} else if (x == 4){
+		out = false;
+		return out;
+	} else {
+		if (x % 2 == 0){
+			out = false;
+			return out;
+		}
+
+		int max_i = (int)(sqrt(x)) + 1;
+		for (int i = 3; i <= max_i; i++) {
+			if (isOdd(i)) {
+				if (x % i == 0) {
+					out = false;
+					return out;
+				}
+			}
+		}
+		
+	}
 }
